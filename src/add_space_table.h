@@ -40,7 +40,6 @@ const no_space_table_t add_space_table[] =
    { CT_ATTRIBUTE,             CT_TYPE                  },
    { CT_ATTRIBUTE,             CT_WORD                  },
    { CT_AUTORELEASEPOOL,       CT_BRACE_OPEN            },
-   { CT_BIT_COLON,             CT_NUMBER                },
    { CT_BIT_COLON,             CT_SIZEOF                },
    { CT_BIT_COLON,             CT_TYPE                  },
    { CT_BIT_COLON,             CT_WORD                  },
@@ -291,7 +290,6 @@ const no_space_table_t add_space_table[] =
    { CT_WHERE_COLON,           CT_WORD                  },
    { CT_WHERE_SPEC,            CT_WORD                  },
    { CT_WORD,                  CT_ATTRIBUTE             },
-   { CT_WORD,                  CT_BIT_COLON             },
    { CT_WORD,                  CT_BRACE_OPEN            },
    { CT_WORD,                  CT_CLASS_COLON           },
    { CT_WORD,                  CT_COLON                 },
@@ -361,6 +359,10 @@ const no_space_table_t no_space_table[] =
    { CT_PAREN_CLOSE,    CT_FPAREN_OPEN  },
    { CT_OC_SEL_NAME,    CT_OC_SEL_NAME  },
    { CT_TYPENAME,       CT_TYPE         },
+
+   // TODO: rather than always remove space, add a configurable rule
+   { CT_BIT_COLON,      CT_NUMBER       },
+   { CT_WORD,           CT_BIT_COLON    },
 };
 
 /**
